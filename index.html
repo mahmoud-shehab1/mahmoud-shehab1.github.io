@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محمود شهاب محمود - محاسب عام محترف</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0f766e;
+            --light-color: #f8fafc;
+            --dark-color: #1e293b;
+            --accent-color: #6366f1;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+        }
+        
+        .header-text {
+            margin-right: 2rem;
+        }
+        
+        .header-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header-text h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        
+        nav {
+            background-color: var(--dark-color);
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .services {
+            background-color: #f1f5f9;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .testimonials {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .testimonial-carousel {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .author {
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .cta {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+        }
+        
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-left: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            margin: 0 0.5rem;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+            background-color: var(--accent-color);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .quote-container {
+            background-color: #f8f9fa;
+            border-right: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+        
+        .quote-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .quote-author {
+            font-weight: 600;
+            text-align: left;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .header-text {
+                margin-right: 0;
+                margin-top: 1rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <img src="file:///D:/%D9%85%D9%88%D9%82%D8%B9%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%20%D8%B4%D9%87%D8%A7%D8%A8%20%D9%88%D9%8A%D8%A8/NegligibleStaticCarat/static/WhatsApp%20Image%202025-03-06%20at%208.57.12%20AM.jpeg" alt="محمود شهاب محمود" class="logo">
+            <div class="header-text">
+                <h1>محمود شهاب محمود</h1>
+                <h2>محاسب عام محترف</h2>
+                <p>"الدقة والاحترافية هي أساس نجاح أعمالك المالية" 💼✨</p>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">من أنا</a></li>
+                <li><a href="#services">خدماتي</a></li>
+                <li><a href="#quotes">مقولات محاسبية</a></li>
+                <li><a href="accounting-structure.html">نماذج من أعمالي</a></li>
+                <li><a href="#contact">تواصل معي</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">من أنا</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>أنا محمود شهاب محمود، محاسب عام ذو خبرة واسعة في مجال المحاسبة والمالية. أقدم خدمات محاسبية احترافية لمختلف أنواع الشركات والمؤسسات. 🏆</p>
+                    <p>أتميز بالدقة والالتزام وتقديم حلول مالية مبتكرة تساعد عملائي على تحقيق أهدافهم المالية بكفاءة عالية. 📊</p>
+                    <p>حاصل على شهادات احترافية في المحاسبة والضرائب، وأواكب دائماً التطورات في القوانين المالية والضريبية لتقديم خدمات محاسبية متوافقة مع أحدث التشريعات. 📜</p>
+                    <p> "أمتلك خبرة واسعة في تقديم الخدمات العامة عبر الأنظمة الحكومية السعودية، بما في ذلك التعامل مع مواقع الوزارات مثل وزارة الداخلية وغيرها، مما يسهل إنجاز المعاملات الإلكترونية بكفاءة واحترافية."</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://img.freepik.com/free-photo/accountant-work-with-calculator-laptop-office_1423-120.jpg" alt="محاسب محترف">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">خدماتي</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>إعداد القوائم المالية</h3>
+                    <p>أقدم خدمات إعداد القوائم المالية الشاملة بما في ذلك الميزانية العمومية وقائمة الدخل وقائمة التدفقات النقدية. 💰</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>إدارة الضرائب</h3>
+                    <p>أساعد في تقديم الإقرارات الضريبية وتخطيط الضرائب بما يتوافق مع القوانين ويحقق وفورات ضريبية مشروعة. 📝</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>تحليل مالي</h3>
+                    <p>أقدم تحليلاً مالياً دقيقاً يساعد في اتخاذ القرارات الاستراتيجية واستغلال الفرص وتجنب المخاطر المالية. 📈</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-coins"></i>
+                    <h3>إدارة التكاليف</h3>
+                    <p>أساعد في تحليل وترشيد التكاليف وتحسين الربحية من خلال استراتيجيات فعالة لخفض التكاليف. 💸</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>تصميم الأنظمة المحاسبية</h3>
+                    <p>تصميم وتطوير أنظمة محاسبية تتناسب مع احتياجات المؤسسة وحجم أعمالها. 🔧</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3>التدقيق الداخلي</h3>
+                    <p>فحص وتقييم دقة السجلات المالية والتأكد من سلامة الإجراءات المحاسبية والالتزام بالمعايير. ✅</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="quotes">
+        <div class="container">
+            <h2 class="section-title">مقولات محاسبية ملهمة</h2>
+            <div class="quote-container">
+                <p class="quote-text">"المحاسبة الدقيقة هي لغة الأعمال الناجحة، ومن يتقنها يفهم أسرار النجاح." 🌟</p>
+                <p class="quote-author">- وارن بافيت</p>
+            </div>
+            <div class="quote-container">
+                <p class="quote-text">"الأرقام لا تكذب، لكن الناس يمكن أن يكذبوا بالأرقام. المحاسب الماهر هو من يظهر الحقيقة من خلال الأرقام." 📊</p>
+                <p class="quote-author">- روبرت كيوساكي</p>
+            </div>
+            <div class="quote-container">
+                <p class="quote-text">"الإدارة المالية السليمة هي مفتاح استدامة الأعمال، والمحاسبة هي البوصلة التي تشير إلى الاتجاه الصحيح." 🧭</p>
+                <p class="quote-author">- بيتر دراكر</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <div class="container">
+            <h2>هل تبحث عن محاسب محترف لإدارة أعمالك المالية؟</h2>
+            <p>دعني أساعدك في تنظيم أمورك المالية وتحقيق النجاح لمشروعك! 🚀</p>
+            <a href="#contact" class="btn">تواصل معي الآن</a>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معي</h2>
+            <div class="contact-info">
+                <div>
+                    <div class="contact-item">
+                        <div>
+                            <p>البريد الإلكتروني:</p>
+                            <p>123mahmoud12shehab@gmail.com</p>
+                        </div>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-item">
+                        <div>
+                            <p>رقم الهاتف:</p>
+                            <p>00966510238299</p>
+                            <p>00201098487109</p>
+                        </div>
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                </div>
+                <div>
+                    <div class="contact-item">
+                        <div>
+                            <p>العنوان:</p>
+                            <p>المملكة العربية السعودية </p>
+                        </div>
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-item">
+                        <div>
+                            <p>ساعات العمل:</p>
+                            <p>السبت - الخميس: 9 صباحاً - 5 مساءً</p>
+                        </div>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/155XKrP6WP/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/1mahmoudshehab2?s=21" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/mahmoud-shehab-681266319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/1mahmoud_shehab?igsh=dGdqMHN4NmNmMDA3&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/qr/26ZTUU2PFM7VF1" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy;  محمود شهاب محمود - محاسب عام. جميع الحقوق محفوظة.2025 ✨</p>
+        </div>
+    </footer>
+</body>
+</html>

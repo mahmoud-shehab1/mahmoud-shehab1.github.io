@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نماذج من أعمالي - محمود شهاب محمود</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0f766e;
+            --light-color: #f8fafc;
+            --dark-color: #1e293b;
+            --accent-color: #6366f1;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo-small {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+        }
+        
+        .header-text {
+            margin-right: 1.5rem;
+        }
+        
+        .header-text h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header-text h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+        
+        nav {
+            background-color: var(--dark-color);
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .example-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .example-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .example-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .example-content {
+            padding: 1.5rem;
+        }
+        
+        .example-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .account-structure {
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .account-section {
+            margin-bottom: 2rem;
+        }
+        
+        .account-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .account-list {
+            list-style-type: none;
+            padding-right: 1.5rem;
+        }
+        
+        .account-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        
+        .account-code {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .back-link i {
+            margin-left: 0.5rem;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+        
+        .service-process {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+        
+        .process-step {
+            flex-basis: 30%;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .process-step:not(:last-child)::after {
+            content: '\f054';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-bottom: 1rem;
+        }
+        
+        .process-step h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .note-box {
+            background-color: #e6f7f5;
+            border-right: 4px solid var(--secondary-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 5px;
+        }
+        
+        .note-box i {
+            color: var(--secondary-color);
+            margin-left: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .header-text {
+                margin-right: 0;
+                margin-top: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .process-step {
+                flex-basis: 100%;
+            }
+            
+            .process-step:not(:last-child)::after {
+                content: '\f078';
+                left: 50%;
+                bottom: -25px;
+                top: auto;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <img src="file:///D:/%D9%85%D9%88%D9%82%D8%B9%20%D9%85%D8%AD%D9%85%D9%88%D8%AF%20%D8%B4%D9%87%D8%A7%D8%A8%20%D9%88%D9%8A%D8%A8/NegligibleStaticCarat/static/WhatsApp%20Image%202025-03-06%20at%208.57.12%20AM.jpeg" alt="محمود شهاب محمود" class="logo-small">
+            <div class="header-text">
+                <h1>نماذج من أعمالي</h1>
+                <h2>محمود شهاب محمود - محاسب عام محترف</h2>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">الصفحة الرئيسية</a></li>
+                <li><a href="#chart-of-accounts">هيكل الحسابات</a></li>
+                <li><a href="#financial-statements">القوائم المالية</a></li>
+                <li><a href="#accounting-process">عملية المحاسبة</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="chart-of-accounts">
+        <div class="container">
+            <h2 class="section-title">هيكل الحسابات المحاسبي النموذجي</h2>
+            <p>يمثل هيكل الحسابات النموذجي الذي أقوم بتصميمه للمؤسسات أساساً قوياً للنظام المحاسبي. يتميز بالتنظيم المنطقي والتسلسل الهرمي الذي يسهل عملية تسجيل وتصنيف المعاملات المالية. 📊</p>
+            
+            <div class="account-structure">
+                <div class="account-section">
+                    <h3>الأصول <i class="fas fa-landmark"></i></h3>
+                    <ul class="account-list">
+                        <li><span class="account-code">1000</span> الأصول المتداولة</li>
+                        <li><span class="account-code">1100</span> النقدية والحسابات المصرفية</li>
+                        <li><span class="account-code">1200</span> الذمم المدينة</li>
+                        <li><span class="account-code">1300</span> المخزون</li>
+                        <li><span class="account-code">1400</span> الاستثمارات قصيرة الأجل</li>
+                        <li><span class="account-code">1500</span> المصروفات المدفوعة مقدماً</li>
+                        <li><span class="account-code">1800</span> الأصول الثابتة</li>
+                        <li><span class="account-code">1900</span> الأصول غير الملموسة</li>
+                    </ul>
+                </div>
+                
+                <div class="account-section">
+                    <h3>الالتزامات <i class="fas fa-balance-scale"></i></h3>
+                    <ul class="account-list">
+                        <li><span class="account-code">2000</span> الالتزامات المتداولة</li>
+                        <li><span class="account-code">2100</span> الذمم الدائنة</li>
+                        <li><span class="account-code">2200</span> القروض قصيرة الأجل</li>
+                        <li><span class="account-code">2300</span> الضرائب المستحقة</li>
+                        <li><span class="account-code">2400</span> المصروفات المستحقة</li>
+                        <li><span class="account-code">2500</span> الإيرادات المقبوضة مقدماً</li>
+                        <li><span class="account-code">2800</span> القروض طويلة الأجل</li>
+                    </ul>
+                </div>
+                
+                <div class="account-section">
+                    <h3>حقوق الملكية <i class="fas fa-chart-pie"></i></h3>
+                    <ul class="account-list">
+                        <li><span class="account-code">3000</span> رأس المال</li>
+                        <li><span class="account-code">3100</span> الاحتياطيات</li>
+                        <li><span class="account-code">3200</span> الأرباح المحتجزة</li>
+                        <li><span class="account-code">3300</span> توزيعات الأرباح</li>
+                    </ul>
+                </div>
+                
+                <div class="account-section">
+                    <h3>الإيرادات <i class="fas fa-hand-holding-usd"></i></h3>
+                    <ul class="account-list">
+                        <li><span class="account-code">4000</span> إيرادات المبيعات</li>
+                        <li><span class="account-code">4100</span> إيرادات الخدمات</li>
+                        <li><span class="account-code">4200</span> إيرادات الاستثمار</li>
+                        <li><span class="account-code">4900</span> إيرادات أخرى</li>
+                    </ul>
+                </div>
+                
+                <div class="account-section">
+                    <h3>المصروفات <i class="fas fa-file-invoice-dollar"></i></h3>
+                    <ul class="account-list">
+                        <li><span class="account-code">5000</span> تكلفة البضاعة المباعة</li>
+                        <li><span class="account-code">5100</span> مصروفات التشغيل</li>
+                        <li><span class="account-code">5200</span> المصروفات الإدارية والعمومية</li>
+                        <li><span class="account-code">5300</span> مصروفات البيع والتسويق</li>
+                        <li><span class="account-code">5400</span> مصروفات الإيجار</li>
+                        <li><span class="account-code">5500</span> الاستهلاك والإطفاء</li>
+                        <li><span class="account-code">5600</span> مصروفات الفوائد</li>
+                        <li><span class="account-code">5700</span> مصروفات الضرائب</li>
+                        <li><span class="account-code">5900</span> مصروفات أخرى</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="note-box">
+                <i class="fas fa-lightbulb"></i>
+                <p>يمكن تخصيص هيكل الحسابات وفقاً لطبيعة وحجم نشاط المؤسسة، مع إمكانية إضافة مستويات فرعية إضافية حسب الحاجة. 💡</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="financial-statements">
+        <div class="container">
+            <h2 class="section-title">نماذج من القوائم المالية</h2>
+            <p>فيما يلي نماذج من القوائم المالية التي أقوم بإعدادها للعملاء، والتي تتميز بالدقة والوضوح وسهولة الفهم. 📝</p>
+            
+            <div class="example-grid">
+                <div class="example-card">
+                    <img src="https://img.freepik.com/free-photo/accounting-business-finance-concept-with-calculator-document-graph-desk-office_1921-499.jpg" alt="الميزانية العمومية" class="example-image">
+                    <div class="example-content">
+                        <h3>الميزانية العمومية</h3>
+                        <p>الميزانية العمومية هي تقرير مالي يوضح الوضع المالي للمؤسسة في تاريخ محدد، ويبين أصول الشركة والتزاماتها وحقوق الملكية. 💼</p>
+                        <p>أقوم بإعداد ميزانيات عمومية دقيقة ومفصلة تساعد المؤسسات على فهم وضعها المالي الحالي واتخاذ القرارات المناسبة.</p>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <img src="https://img.freepik.com/free-photo/business-concept-with-profit-report-table_23-2149398447.jpg" alt="قائمة الدخل" class="example-image">
+                    <div class="example-content">
+                        <h3>قائمة الدخل</h3>
+                        <p>قائمة الدخل هي تقرير مالي يوضح أداء المؤسسة خلال فترة زمنية محددة، ويبين الإيرادات والمصروفات وصافي الربح أو الخسارة. 📈</p>
+                        <p>أقدم قوائم دخل تفصيلية تساعد في تحليل الأداء المالي للمؤسسة وتحديد مجالات التحسين.</p>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <img src="https://img.freepik.com/free-photo/businessman-using-calculator-with-documents-graphs-desk-office_1921-508.jpg" alt="قائمة التدفقات النقدية" class="example-image">
+                    <div class="example-content">
+                        <h3>قائمة التدفقات النقدية</h3>
+                        <p>قائمة التدفقات النقدية هي تقرير مالي يوضح التغيرات في النقدية والنقدية المعادلة للمؤسسة خلال فترة زمنية محددة. 💰</p>
+                        <p>أعد قوائم تدفقات نقدية دقيقة تساعد في فهم مصادر واستخدامات النقد وتقييم قدرة المؤسسة على الوفاء بالتزاماتها.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="accounting-process">
+        <div class="container">
+            <h2 class="section-title">عملية المحاسبة المتكاملة</h2>
+            <p>تتبع عملية المحاسبة التي أقدمها خطوات منهجية ومنظمة لضمان دقة وفعالية العمل المحاسبي. 🔄</p>
+            
+            <div class="service-process">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>جمع المستندات</h4>
+                    <p>جمع وتنظيم جميع المستندات والفواتير والإيصالات والعقود وغيرها من المستندات المالية.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>تسجيل المعاملات</h4>
+                    <p>تسجيل المعاملات المالية في دفتر اليومية وفقاً لمبدأ القيد المزدوج.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>ترحيل القيود</h4>
+                    <p>ترحيل القيود من دفتر اليومية إلى دفتر الأستاذ العام والدفاتر المساعدة.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>إعداد ميزان المراجعة</h4>
+                    <p>إعداد ميزان المراجعة للتأكد من توازن الجانب المدين والدائن.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h4>إجراء التسويات</h4>
+                    <p>إجراء التسويات اللازمة مثل الاستهلاك والمصروفات المستحقة والمدفوعة مقدماً.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h4>إعداد القوائم المالية</h4>
+                    <p>إعداد القوائم المالية النهائية بما في ذلك الميزانية العمومية وقائمة الدخل وقائمة التدفقات النقدية.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">7</div>
+                    <h4>تحليل البيانات</h4>
+                    <p>تحليل البيانات المالية وإعداد تقارير تحليلية توضح الأداء المالي ومجالات التحسين.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">8</div>
+                    <h4>تقديم التوصيات</h4>
+                    <p>تقديم توصيات استراتيجية بناءً على التحليل المالي لتحسين الأداء واتخاذ قرارات مالية سليمة.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">9</div>
+                    <h4>المتابعة والتطوير</h4>
+                    <p>متابعة تنفيذ التوصيات وتطوير الأنظمة المحاسبية باستمرار وفقاً للمتغيرات.</p>
+                </div>
+            </div>
+            
+            <div class="note-box">
+                <i class="fas fa-info-circle"></i>
+                <p>أقدم خدمات محاسبية متكاملة تشمل جميع مراحل العملية المحاسبية، مع الالتزام بأعلى معايير الدقة والسرية المهنية. 🔒</p>
+            </div>
+            
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> العودة إلى الصفحة الرئيسية</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy;  محمود شهاب محمود - محاسب عام. جميع الحقوق محفوظة.2025 </p>
+        </div>
+    </footer>
+</body>
+</html>
